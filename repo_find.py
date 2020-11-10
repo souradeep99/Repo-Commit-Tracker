@@ -5,7 +5,7 @@ contributors_url = (
     "https://api.github.com/repos/{organization}/{repo_name}/contributors"
 )
 
-token = "5a9be6f06fd6051d91a43253a140726f4e383fcb"
+token = ""
 headers = {"Authorization": token}
 
 page_url = "/list?org={}&N={}&M={}&page_no={}"
