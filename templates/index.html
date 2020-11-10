@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Repo Tracker</title>
+
+
+  <style>
+    .box {
+      width: 400px;
+      padding: 40px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #000033;
+      text-align: center;
+      border-style: solid;
+      border-width: 8px;
+      border-color: #3498db;
+      border-radius: 38px;
+    }
+
+    .box h1 {
+      color: white;
+      font-weight: 500;
+      border-radius: 60px;
+    }
+
+    .box input[type="text"] {
+      border: 0;
+      background: none;
+      font-family: monospace;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid #3498db;
+      padding: 14px 10px;
+      width: 300px;
+      outline: none;
+      color: white;
+      border-radius: 24px;
+      transition: 0.25s;
+    }
+
+    .box input[type="text"]:focus {
+      width: 295px;
+      border-color: #2ecc71;
+    }
+
+    .box input[type="submit"] {
+      border: 0;
+      font-family: monospace;
+      background: none;
+      display: block;
+      margin: 20px auto;
+      text-align: center;
+      border: 2px solid #2ecc71;
+      padding: 14px 40px;
+      outline: none;
+      color: white;
+      border-radius: 24px;
+      transition: 0.25s;
+      cursor: pointer;
+    }
+
+    .box input[type="submit"]:hover {
+      background: #2ecc71;
+    }
+
+    .multicolortext {
+      font-family: monospace;
+      font-size: 15px;
+      background-image: linear-gradient(to right, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    }
+  </style>
+</head>
+
+<body class="multicolortext">
+
+  <div class="content">
+    <div class="form">
+      <form class="box" action="/list">
+        <h1>Repo-Tracker</h1>
+        <input type="text" name="org" id="org" autocomplete="off" placeholder="Enter Name of the Organization" />
+        <input type="text" name="N" id="N" autocomplete="off" placeholder="Enter Number of Repositories (N)" />
+        <input type="text" name="M" id="M" autocomplete="off" placeholder="Enter Number of Committees (M)" />
+        <input type="hidden" name="page_no" value="1" />
+        <input type="submit" value="Query Organization" />
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
