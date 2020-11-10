@@ -16,6 +16,9 @@ def get_my_list():
     m = request.args.get("M")
     page_no = request.args.get("page_no", "1")
 
+    if(int(n) <= 0 or int(m) < 0):
+        return "There is an error with organization or one of the values of n or m is not positive"
+
     repos, next_page_link, previous_page_link = get(org, int(n), int(m), page_no)
     org_name = str(org)
 

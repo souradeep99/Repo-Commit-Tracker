@@ -5,7 +5,7 @@ contributors_url = (
     "https://api.github.com/repos/{organization}/{repo_name}/contributors"
 )
 
-token = ""
+token = "" # Add your token here
 headers = {"Authorization": token}
 
 page_url = "/list?org={}&N={}&M={}&page_no={}"
@@ -23,6 +23,13 @@ def query_organization(org, n, m, page_no):
         repo_url.format(organization=org, per_page=per_page, page_no=str(page_no)),
         headers=headers,
     ).json()
+
+    next_page_link = "#"
+    previous_page_link = "#"
+
+    if("message" in repos or len(repos) == 0):
+        return "404", next_page_link, previous_page_link
+
     forks = []
 
     repo_count_per_page = 0
@@ -33,8 +40,6 @@ def query_organization(org, n, m, page_no):
             forks.append((i["forks_count"], i["html_url"], i["name"]))
             repo_count_per_page += 1
 
-    next_page_link = "#"
-    previous_page_link = "#"
 
     next_page = int(page_no) + 1
     pervious_page = int(page_no) - 1
